@@ -30,11 +30,10 @@ sudo chmod +x /usr/local/bin/docker-compose
 chsh -s /usr/bin/fish $SUDO_USER
 
 git clone https://gist.github.com/8b1635d6c6d711ff120dbf5808bc2b71.git /home/$SUDO_USER/.upgrade
-chmod +x /home/$SUDO_USER/.upgrade/upgrade.sh
 
 su $SUDO_USER
 
-echo 'alias up "bash /home/$SUDO_USER/.upgrade/upgrade.sh"' >> /home/$SUDO_USER/.config/fish/config.fish
+echo 'alias up "bash ~/.upgrade/upgrade.sh"' >> /home/$SUDO_USER/.config/fish/config.fish
 
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher install simnalamburt/shellder
