@@ -8,6 +8,8 @@ apt-get install \
     htop \
     wormhole \
     fish \
+    snap \
+    flatpak \
     ca-certificates \
     curl \
     gnupg \
@@ -25,13 +27,11 @@ apt-get install docker-ce docker-ce-cli containerd.io -y
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-chsh -s /usr/bin/fish
+chsh -s /usr/bin/fish $SUDO_USER
 
-git clone https://gist.github.com/8b1635d6c6d711ff120dbf5808bc2b71.git ~.upgrade
-chmod +x ~/.upgrade/upgrade.sh
+git clone https://gist.github.com/8b1635d6c6d711ff120dbf5808bc2b71.git /home/$SUDO_USER/.upgrade
+chmod +x /home/$SUDO_USER/.upgrade/upgrade.sh
+
+echo 'alias up "bash /home/$SUDO_USER/.upgrade/upgrade.sh"' >> /home/$SUDO_USER/.config/fish/config.fish
 
 su $SUDO_USER
-
-function up
-    ~/.upgrade/upgrade.sh
-end
