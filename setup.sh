@@ -38,12 +38,22 @@ chsh -s /usr/bin/fish $SUDO_USER
 # Cloning update script
 git clone https://gist.github.com/8b1635d6c6d711ff120dbf5808bc2b71.git /home/$SUDO_USER/.upgrade
 
-su $SUDO_USER
+# Installing Plugins in Fish
+fish << EOF
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+wget https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
+sudo unzip -q exa-linux-x86_64-v0.10.1.zip bin/exa -d /usr/local
+fisher install jethrokuan/z
+fisher install joseluisq/gitnow
+fisher install oh-my-fish/theme-l
+EOF
 
-# aliases
+# Creating Aliases
 echo 'alias up "bash ~/.upgrade/upgrade.sh"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias ls "exa"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias ll "exa -l"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias la "exa -a"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias lla "exa -la"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias lg "exa -l --git"' >> /home/$SUDO_USER/.config/fish/config.fish
+
+su $SUDO_USER
