@@ -39,7 +39,7 @@ chsh -s /usr/bin/fish $SUDO_USER
 git clone https://gist.github.com/8b1635d6c6d711ff120dbf5808bc2b71.git /home/$SUDO_USER/.upgrade
 
 # Installing Plugins in Fish
-fish << EOF
+sudo -u $SUDO_USER fish << EOF
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 wget https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v0.10.1.zip
 sudo unzip -q exa-linux-x86_64-v0.10.1.zip bin/exa -d /usr/local
