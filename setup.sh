@@ -57,4 +57,5 @@ echo 'alias lla "exa -la"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias lg "exa -l --git"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias cl "clear"' >> /home/$SUDO_USER/.config/fish/config.fish
 
+rm -f ~/exa*
 su $SUDO_USER
