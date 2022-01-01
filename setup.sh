@@ -48,6 +48,8 @@ fisher install joseluisq/gitnow
 fisher install oh-my-fish/theme-l
 EOF
 
+su $SUDO_USER
+
 # Creating Aliases
 echo 'alias up "bash ~/.upgrade/upgrade.sh"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias ls "exa"' >> /home/$SUDO_USER/.config/fish/config.fish
@@ -56,4 +58,4 @@ echo 'alias la "exa -a"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias lla "exa -la"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias lg "exa -l --git"' >> /home/$SUDO_USER/.config/fish/config.fish
 
-su $SUDO_USER
+echo 'done'
