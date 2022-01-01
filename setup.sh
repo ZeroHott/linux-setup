@@ -51,7 +51,7 @@ EOF
 # Creating Aliases
 echo 'alias up "bash ~/.upgrade/upgrade.sh"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias ls "exa"' >> /home/$SUDO_USER/.config/fish/config.fish
-echo 'alias ll "exa -l"' >> /home/$SUDO_USER/.config/fish/config.fish
+echo 'alias l "exa -l"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias la "exa -a"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias lla "exa -la"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias lg "exa -l --git"' >> /home/$SUDO_USER/.config/fish/config.fish
