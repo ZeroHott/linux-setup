@@ -57,6 +57,8 @@ echo 'alias lla "exa -la"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias lg "exa -Rl --git"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias lr "exa -Rl"' >> /home/$SUDO_USER/.config/fish/config.fish
 echo 'alias cl "clear"' >> /home/$SUDO_USER/.config/fish/config.fish
+echo 'alias cat "batcat"' >> /home/$SUDO_USER/.config/fish/config.fish
+echo 'alias gh "github"' >> /home/$SUDO_USER/.config/fish/config.fish
 
 rm -f ~/exa*
 su $SUDO_USER
